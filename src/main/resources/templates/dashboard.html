@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6"
+	  layout:decorate="layouts/default">
+    <body>
+        <div layout:fragment="content">
+            <div class="row">
+				<div class="col"></div>		<!-- left column -->
+				<div class="col-10 g3 align-items-center">
+	                <h1 th:text="${title}">My Dashboard</h1>
+	                <p th:text="${message}">Welcome to your Milestone Inventory Dashboard!</p>
+				</div>
+				<div class="col"></div>		<!-- right column -->
+			</div>
+			<div class="row">
+				<div class="col"></div>		<!-- left column -->
+				<div class="col col-10 g-3 align-items-center">
+					<div class="row">
+						<div class="card shadow-sm mx-2 my-2" sec:authorize="hasRole('ROLE_ADMIN')" style="width: 20rem">
+		                      
+		                  <span class="placeholder col-12 bg-primary"><img src="" class="card-img-top" style="height:200px;" alt=""></span>
+		                  
+		                  <div class="card-body">
+		                    <h5 class="card-title">Admin Dashboard</h5>
+		                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+		                    <a th:href="@{/admin/dashboard/}" class="btn btn-primary btn-sm stretched-link">View Dashboard</a>
+		                  </div>
+						  This content is only shown to administrators.
+						</div>
+						
+						<div class="card shadow-sm mx-2 my-2" style="width: 20rem">
+						  
+						  <span class="placeholder col-12 bg-primary"><img src="" class="card-img-top" style="height:200px;" alt=""></span>
+			
+						  <div class="card-body">
+						    <h5 class="card-title">Storage Soon to Come...</h5>
+						    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						    <a th:href="@{/user/inventory/}" class="btn btn-primary btn-sm stretched-link">Storage</a>
+						  </div>
+						</div>
+						<!--<div class="card shadow-sm mx-2 my-2" style="width: 20rem">
+						  <span class="placeholder col-12 bg-warning"><img src="" class="card-img-top" style="height:200px;" alt=""></span>
+			
+						  <div class="card-body">
+						    <h5 class="card-title">Category Lists</h5>
+						    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						    <a th:href="@{/user/categories/}" class="btn btn-warning btn-sm stretched-link">View Categories</a>
+						  </div>
+						</div>-->
+		                
+		            
+						<div class="card shadow-sm mx-2 my-2" style="width: 20rem">
+			              <span class="placeholder col-12 bg-success"><img src="" class="card-img-top" style="height:200px;" alt=""></span>
+			
+			              <div class="card-body">
+			                <h5 class="card-title">Account</h5>
+			                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+			                <a th:href="@{/user/account/}" class="btn btn-success btn-sm stretched-link">View Account</a>
+			              </div>
+					  </div>
+					</div>
+				</div>
+			  <div class="col"></div>		<!-- right column -->
+        	</div>
+        </div>
+    </body>

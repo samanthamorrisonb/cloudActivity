@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" 
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6"
+	  layout:decorate="layouts/center_form">
+    <body>
+	
+		
+		<div layout:fragment="content">
+			<div>
+					<h1 th:text="${title}">Title</h1>
+					<div th:if="${logout}">You have been logged out.</div>
+					<span th:if="${error}"><p class="alert alert-danger" th:text="${error}">errors</p></span>
+				
+			</div>
+			<div>
+				
+					
+					<form action="#" th:action="@{doLogin}" th:object="${loginModel}" method="post">
+					    <div>
+					        <label for="username">Username:</label>
+					        <input class="form-control" type="text" id="username" name="username" th:field="*{username}" required>
+							<!-- Error message for username -->
+							<h5 class="alert alert-danger" 
+								th:if="${#fields.hasErrors('username')}" 
+								th:errors="*{username}">Username Error</h5>
+					    </div>
+					    <div>
+					        <label for="password">Password:</label>
+					        <input class="form-control" type="password" id="password" name="password" th:field="*{password}" required>
+							<!-- Error message for password -->
+							<h5 class="alert alert-danger" 
+								th:if="${#fields.hasErrors('password')}" 
+								th:errors="*{password}">Password Error</h5>
+					    </div>
+						<div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">List of Errors</div>
+						<div th:each="err : ${#fields.errors('*')}" class="alert alert-danger">
+							<span th:text="${err}"></span>
+							
+						</div>
+					    <div>
+					        <button type="submit" class="btn btn-success my-2">Login</button>
+					    </div>
+					</form>
+				
+	                <p>Don't have an account?<a href="/registration/">Register here!</a></p>
+				
+	                <p>Forgot your password?<a href="">Reset here!</a></p>
+			</div>
+									
+					
+			</div>
+	</body>
+</html>

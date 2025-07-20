@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6"
+      layout:decorate="layouts/default">
+    <body>
+        <div layout:fragment="content">
+            <div class="row">
+                <div class="col"></div>		<!-- left column -->
+                <div class="col-10 g3 align-items-center">
+                    <h1 th:text="${title}">Edit User</h1>
+                    <p th:text="${message}">Welcome to your Milestone Inventory Edit User!</p>
+                </div>
+                <div class="col"></div>		<!-- right column -->
+            </div>
+			            <div class="row">
+                <div class="col"></div>		<!-- left column -->
+                <div class="col col-10 g-3 align-items-center">
+                    <form th:action="@{/admin/user/edit/{id}(id=${user.id})}" method="post" th:object="${userinfo}">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" th:field="*{userinfo.username}" required>
+                        </div>
+						
+						<div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" th:field="*{userinfo.email}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" th:field="*{userinfo.firstName}" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" th:field="*{userinfo.lastName}" required>
+                        </div>
+						<div class="mb-3">
+                            <label for="role" class="form-label">Role</label>
+                            <select class="form-select" id="role" th:field="*{userinfo.role}" required>
+                                <option value="" disabled selected>Select Role</option>
+                                <option value="ROLE_USER">User</option>
+                                <option value="ROLE_ADMIN">Admin</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Update User</button>
+                    </form>
+                </div>
+                <div class="col"></div>		<!-- right column -->
+            </div>
+        </div>
+						

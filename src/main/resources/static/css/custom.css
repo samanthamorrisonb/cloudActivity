@@ -1,0 +1,162 @@
+:root{
+	--edit : skyblue;
+	--add : darkseagreen;
+	--good: darkseagreen;
+	--warn: chocolate;
+	--warnborder: saddlebrown;
+	--danger: brown;
+	--dangerborder: firebrick;
+	--lightblue: steelblue;
+	--lighterblue: lightsteelblue;
+	--lightgreen: darkseagreen;	
+	--darkgreen: #5B785B;
+	--themebrown: #383948;
+	--themewhite: #f0edf1;
+	--themegold: #8A856D;
+	--themetan: #96989E;
+	--themered: #716678;
+}
+body, .bg-main {
+	background-color: var(--themebrown) !important;
+	
+}
+h1, h2, h3, h4, h5, h6, td {
+    color:var(--themewhite) !important;
+}
+div p{
+	color:var(--themewhite) !important;
+}
+.add  {
+	text-align: right;
+	color:var(--lightgreen);
+}
+/***************************************** NavBar *****************************************/
+.navbar a, .navbar a:visited {
+	color:var(--themewhite) !important;
+}
+.navbar a:hover {
+	color:var(--themered);
+}
+/***************************************** Footer *****************************************/
+.footer {
+	text-align: center;
+	
+}
+
+/***************************************** DataTable *****************************************/
+table td{
+	color:var(--themebrown) !important; /*font color*/
+    background-color: var(--themewhite) !important;
+}
+table.dataTable td.dt-control {
+	border-top: 5px solid var(--themegold) !important;
+  border-left: 10px solid var(--themegold) !important;
+  border-bottom: 5px solid var(--themered)!important;
+  border-right: 0px solid var(--themered) !important;	
+}
+
+div.dt-container div.dt-search input {
+  background-color: var(--themewhite) !important;
+  color: var(--themebrown) !important;
+  
+}
+div.dt-container div.dt-paging, div.dt-container div.dt-info{
+  color: var(--themewhite) !important;
+}
+div.dt-container div.dt-length .dt-input {
+	color: var(--themebrown) !important;
+	background-color: var(--themewhite) !important;
+}
+div.dt-container div.dt-paging span {
+  color: var(--themegreen) !important;
+  background-color: var(--themewhite) !important;
+}
+div.dt-container div.dt-length dropbtn {
+	color:var(--themebrown)!important;
+	background-color: var(--themewhite) !important;	
+}
+/***************************************** Form/Link Elements *****************************************/
+.dates {
+	color:var(--lightblue);
+}
+div p a, div p a:visited {
+    color:var(--themewhite) !important;
+	text-decoration: underline !important;
+}
+p a:hover, .footer p a:hover {
+    color:var(--themegold) !important;
+	text-decoration: underline !important;
+}
+label, hr.primary {
+    color:var(--themewhite) !important;
+}
+.card   {
+	background-color:var(--themebrown) !important;	
+}
+.btn-success {
+	background-color:var(--lightgreen)!important;
+    border-color:var(--darkgreen) !important;
+}
+.bg-success {
+		background-color: var(--lightgreen) !important;
+		border-color:var(--darkgreen) !important;
+		
+}
+
+.bg-primary {
+		background-color:var(--lightblue) !important;
+}
+.btn-primary {
+	background-color: var(--lightblue) !important;
+    border-color: var(--lighterblue) !important;
+}
+.primary {
+	color: var(--themegold) !important;
+}
+.btn-warning{
+	background-color:var(--danger) !important;
+    border-color: var(--warnborder) !important;
+	color		: var(--themewhite) !important;
+}
+.bg-warning{
+	background-color: var(--warn) !important;
+    border-color: var(--warnborder) !important;
+	color		: var(--themewhite) !important;	
+}
+.alert-danger{
+	background-color: var(--danger) !important;
+    border-color: var(--dangerborder) !important;
+    color		: var(--themewhite) !important;	
+}
+.alert-success, .alert.success{
+    background-color: var(--lightgreen) !important;
+    border-color: var(--darkgreen) !important;
+    color		: var(--themebrown) !important;	
+}
+/***************************************** Feather Icons *****************************************/
+.feather{
+	color: var(--themewhite);
+	width:30px;
+	height:30px;
+	margin-top: 3px;
+	text-align: right;	
+}
+.feather-edit{
+	color:var(--edit);
+    width:30px;
+    height: 30px;
+	margin-top: 10px;
+}
+.feather-add{
+	color:var(--add);
+	width:30px;
+    height: 30px;
+	margin-top: 10px;
+}
+.feather-delete{
+	color:var(--danger);
+	width:30px;
+	height: 30px;
+	margin-top: 10px;
+	
+}
