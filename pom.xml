@@ -20,6 +20,15 @@
 	<developers>
 		<developer/>
 	</developers>
+	 <distributionManagement>
+		<repository>
+			<uniqueVersion>false</uniqueVersion>
+			<id>Milestone</id>
+			<name>GCU CST-323 Activity</name>
+			<url>https://cloudactivity-gqfta5e8cee0huhc.centralus-01.azurewebsites.net/</url>
+			<layout>default</layout>
+		</repository>
+	 </distributionManagement> 
 	<scm>
 		<connection/>
 		<developerConnection/>
