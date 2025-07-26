@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `update_date` DATETIME NULL DEFAULT NULL)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
-ALTER TABLE `user` ADD INDEX (`id`);
+
 CREATE UNIQUE INDEX `user_credentials_user_id_UNIQUE` ON `user` (`user_id` ASC);
 
 CREATE UNIQUE INDEX `email_UNIQUE` ON `user` (`email` ASC);
