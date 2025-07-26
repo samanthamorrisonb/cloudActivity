@@ -23,9 +23,9 @@
 	 <distributionManagement>
 		<repository>
 			<uniqueVersion>false</uniqueVersion>
-			<id>Milestone</id>
+			<id>cloudActivity</id>
 			<name>GCU CST-323 Activity</name>
-			<url>https://cloudactivity-gqfta5e8cee0huhc.centralus-01.azurewebsites.net/</url>
+			<url>https://cloudactivity-gqfta5e8cee0huhc.centralus-01.azurewebsites.net</url>
 			<layout>default</layout>
 		</repository>
 	 </distributionManagement> 
@@ -116,7 +116,7 @@
 	      <version>5.22.0</version>
 	      <type>pom</type>
     	</dependency>
-	  
+	    
 
 
 	</dependencies>
@@ -127,7 +127,27 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+			     <groupId>org.apache.maven.plugins</groupId>
+			     <artifactId>maven-dependency-plugin</artifactId>
+			     <executions>
+			         <execution>
+			             <goals>
+			                 <goal>properties</goal>
+			             </goals>
+			         </execution>
+			     </executions>
+			 </plugin>
+			 <plugin>
+			     <groupId>org.apache.maven.plugins</groupId>
+			     <artifactId>maven-surefire-plugin</artifactId>
+			     <configuration>
+			         <argLine>@{argLine} -javaagent:${org.mockito:mockito-core:jar}</argLine>
+			     </configuration>
+			 </plugin>
+			 
 		</plugins>
+		
 	</build>
 
 </project>
